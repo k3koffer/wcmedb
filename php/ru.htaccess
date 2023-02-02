@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteRule ^([^.?]+)$ %{REQUEST_URI}.php [L]
+RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$"
+RewriteRule .* - [L,R=404]
+
+
+php_flag display_startup_errors off
+php_flag display_errors off
+php_flag html_errors off

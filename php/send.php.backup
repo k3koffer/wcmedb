@@ -1,0 +1,29 @@
+<?php
+
+$joinname = $_POST['name'];
+$joindiscord = $_POST['discord'];
+$joinabout = $_POST['aboutyourself'];
+$joingohome = $_POST['gohomecheck'];
+
+$joinname = htmlspecialchars($joinname);
+$joindiscord = htmlspecialchars($joindiscord);
+$joinabout = htmlspecialchars($joinabout);
+$joingohome = htmlspecialchars($joingohome);
+
+$joinname = urldecode($joinname);
+$joindiscord = urldecode($joindiscord);
+$joinabout = urldecode($joinabout);
+$joingohome = urldecode($joingohome);
+
+$joinname = trim($joinname);
+$joindiscord = trim($joindiscord);
+$joinabout = trim($joinabout);
+$joingohome = trim($joingohome);
+
+ if (mail("k3koffer@yandex.ru", "DB Заявка на вступление", "ФИО:".$joinname.". E-mail: ".$joindiscord ,"From: k3koffer@yandex.ru \r\n"))
+ {
+    echo "сообщение успешно отправлено";
+} else {
+    echo "при отправке сообщения возникли ошибки";
+}
+
